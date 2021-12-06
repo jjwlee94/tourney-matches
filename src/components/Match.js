@@ -2,6 +2,7 @@ import React from "react"; //optional
 
 function Match(props) {
   const { players, winner, scoreDifference } = props;
+
   return (
     <article className="Match">
       <h1>
