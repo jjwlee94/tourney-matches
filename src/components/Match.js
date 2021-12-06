@@ -1,19 +1,17 @@
 import React from "react"; //optional
 
 function Match(props) {
-  const { players, winner, scoreDifference } = props;
-
   return (
     <article className="Match">
       <h1>
-        {players[0]} <span>vs</span> {players[1]}
+        {props.players[0]} <span>vs</span> {props.players[1]}
       </h1>
-      {winner && (
+      {props.winner && (
         <h2>
-          {winner} is the winner by {scoreDifference}!
+          {props.winner} is the winner by {props.scoreDifference}!
         </h2>
       )}
-      {!winner && <h2>No winners yet!</h2>}
+      {!props.winner && <h2>No winners yet!</h2>}
     </article>
   );
 }

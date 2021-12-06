@@ -1,18 +1,15 @@
 import React from "react"; //optional
 
 function Player(props) {
-  const { gamerTag, firstName, lastName, wins } = props;
-
   return (
     <article className="Player">
       <h1>
-        {firstName} <span>{gamerTag}</span> {lastName}
+        {props.firstName} <span>{props.gamerTag}</span> {props.lastName}
       </h1>
-      {wins === 0 && <h2 className="zero">Currently with no wins</h2>}
-      {wins === 1 && <h2>Currently at {wins} win</h2>}
-      {wins > 1 && <h2>Currently at {wins} wins</h2>}
+      {!props.wins && <h2 className="zero">Currently with no wins</h2>}
+      {props.wins === 1 && <h2>Currently at {props.wins} win</h2>}
+      {props.wins > 1 && <h2>Currently at {props.wins} wins</h2>}
     </article>
   );
 }
-
 export default Player;
